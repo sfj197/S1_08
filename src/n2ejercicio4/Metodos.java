@@ -34,13 +34,9 @@ public class Metodos {
 		
 		lista.replaceAll(a -> {
 			
-			if(a.contains("a")) {
+			if(a.contains("a") || a.contains("A")) {
 				
-				return a.replace("a", "4");
-				
-			}else if(a.contains("A")) {
-				
-				return a.replace("A", "4");
+				return a.replace("a", "4").replace("A", "4");
 				
 			}else {
 				
