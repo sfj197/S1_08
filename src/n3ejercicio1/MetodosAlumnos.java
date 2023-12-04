@@ -19,38 +19,28 @@ public class MetodosAlumnos {
 
 	}
 	
-	public static void aprobados(List<Alumno>lista) {
+		public static void aprobados(List<Alumno>lista) {
 		
-		lista.forEach(a -> {
-			if(a.getNota() >= 5) {
-				
-				System.out.println(a);
-			}
-		});
+		lista.stream().filter(a -> a.getNota() >=5).
 		
+		forEach(System.out::println);
+			
 		
 	}
 	
 	public static void noSonPHP(List<Alumno>lista) {
 		
-		lista.forEach(a -> {
-			if(a.getNota() >= 5 && a.getCurso() != "PHP") {
-				
-				System.out.println(a);
-			}
-		});
+	lista.stream().filter(a -> a.getNota() >=5 && a.getCurso() != "PHP").
+		
+		forEach(System.out::println);
 		
 		
 	}
 	
 	public static void sonDeJava(List<Alumno>lista) {
 		
-		lista.forEach(a -> {
-			if(a.getCurso().equalsIgnoreCase("java") && a.getEdad() >=18) {
-				
-				System.out.println(a);
-			}
-		});
+		lista.stream().filter(a -> a.getEdad() >=18 && a.getCurso().equalsIgnoreCase("Java")).
+		forEach(System.out::println);
 	}
 
 }
